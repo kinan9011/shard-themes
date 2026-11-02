@@ -14,3 +14,33 @@ jobs:
           node-version: 22
       # Every theme must be valid and index.json must list the files as they are.
       - run: node scripts/build-index.mjs --check
+
+  # Signs index.json after a push to main and commits index.json.sig next to it.
+  # Not on pull requests: forks get no secrets. A push made with GITHUB_TOKEN does not start this workflow again.
+  sign:
+    needs: index
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Sign index.json
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.INDEX_SIGNING_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.INDEX_SIGNING_PASSWORD }}
+        run: |
+          # Writes index.json.sig. The bytes of index.json must not change after this step.
+          npx --yes @tauri-apps/cli@2 signer sign index.json
+          test -s index.json.sig
+      - name: Commit index.json.sig
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.json.sig
+          git diff --cached --quiet || git commit -m "chore: sign index.json"
+          git pull --rebase origin main
+          git push origin main
