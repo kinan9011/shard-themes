@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "name": "Shard Themes",
+  "plugins": [],
+  "themes": [
+    {
+      "id": "catppuccin",
+      "name": "Catppuccin",
+      "version": "1.0.0",
+      "description": "Soothing pastels: Mocha for dark, Latte for light.",
+      "url": "https://raw.githubusercontent.com/kinan9011/shard-themes/main/themes/catppuccin.json",
+      "sha256": "221889cf196d7603f0ceca6eccff80d9cca0beb2232016e6f26b233dcf6d349b",
+      "size": 3476
+    },
+    {
+      "id": "dracula",
+      "name": "Dracula",
+      "version": "1.0.0",
+      "description": "A dark theme with vivid purple, pink and green.",
+      "url": "https://raw.githubusercontent.com/kinan9011/shard-themes/main/themes/dracula.json",
+      "sha256": "0165c96eeb8717f6112c4319987ac987bae9fa6d03c8e093f0fa829c496ee096",
+      "size": 1815
+    },
+    {
+      "id": "gruvbox",
+      "name": "Gruvbox",
+      "version": "1.0.0",
+      "description": "Warm, retro colors on a soft background.",
+      "url": "https://raw.githubusercontent.com/kinan9011/shard-themes/main/themes/gruvbox.json",
+      "sha256": "03e1693c7e2447d3d2a9e163025695d427301ec229f7c7ce05d91c2442594f57",
+      "size": 3375
+    },
+    {
+      "id": "nord",
+      "name": "Nord",
+      "version": "1.0.0",
+      "description": "An arctic, north-bluish palette.",
+      "url": "https://raw.githubusercontent.com/kinan9011/shard-themes/main/themes/nord.json",
+      "sha256": "641daec896d2d54cad2c3e59465187a64aa5390e70f4baa1232b47388f1333d5",
+      "size": 3443
+    },
+    {
+      "id": "rose-pine",
+      "name": "Rosé Pine",
+      "version": "1.0.0",
+      "description": "All natural pine, faux fur and a bit of soho vibes: Main for dark, Dawn for light.",
+      "url": "https://raw.githubusercontent.com/kinan9011/shard-themes/main/themes/rose-pine.json",
+      "sha256": "813e297ad9a5fb191763c0c34fd0bc96dbb6d8a8f3d64b8bb32e40bbf3ba12ee",
+      "size": 3504
+    },
+    {
+      "id": "tokyo-night",
+      "name": "Tokyo Night",
+      "version": "1.0.0",
+      "description": "A clean theme inspired by the lights of Tokyo, with a Day variant.",
+      "url": "https://raw.githubusercontent.com/kinan9011/shard-themes/main/themes/tokyo-night.json",
+      "sha256": "122414c06b9389bbbe3d39f6829ca3eb4e1aeb607b74bee133cf0f5f07e0be3c",
+      "size": 3491
+    }
+  ]
+}
